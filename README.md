@@ -14,11 +14,20 @@ npm run dev
 Promt:
 Ich nutze React + typescript + vite + tailwind. Alles ist bereits installiert und konfiguriert. Wie z.b tsconfig.json und alle tailwind files!.
 Meine App.tsx sieht gerade noch so aus :
+import { Routes, Route } from "react-router-dom";
+
 function App() {
 return (
+<Routes>
+<Route
+path="/"
+element={
 <div className="min-h-screen flex items-center justify-center">
 <h1 className="text-3xl font-semibold">Hello World</h1>
 </div>
+}
+/>
+</Routes>
 );
 }
 
@@ -28,15 +37,18 @@ meine main.tsx so:
 
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { HashRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 <React.StrictMode>
+<HashRouter>
 <App />
+</HashRouter>
 </React.StrictMode>
 );
-.
+
 
 unter src/components, sollen alle compontens hin (falls die bnotigt werden).
 Das könnte dann so aussehen :
